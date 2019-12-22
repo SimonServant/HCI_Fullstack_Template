@@ -7,7 +7,6 @@ import { RestclientService } from '../restclient.service';
   styleUrls: ['./books.component.css']
 })
 export class BooksComponent implements OnInit {
-  readonly selectorString = 'books';
   books: any;
 
   constructor(private restClientService: RestclientService) { }
@@ -15,7 +14,7 @@ export class BooksComponent implements OnInit {
   ngOnInit() {
     this.restClientService.getBooks().subscribe((data) => {
       console.log(data);
-      this.books = data[this.selectorString];
+      this.books = data;
     });
   }
 

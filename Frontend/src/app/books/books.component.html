@@ -1,3 +1,10 @@
-<div *ngFor="let book of books">
-  <h2>{{ book.title }}</h2>
-</div>
+<div class="jumbotron" style="background-color: #fff; height: calc(95vh);">
+    <h1>Books</h1>
+    <p class="lead">
+      This page displays the books in a simple way.
+    </p>
+    <li *ngFor="let book of books">
+        {{ book.title }}
+      </li>
+  </div>
+  
