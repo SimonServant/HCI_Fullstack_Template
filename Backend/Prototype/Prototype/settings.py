@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'HCI_Template.apps.HciTemplateConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
