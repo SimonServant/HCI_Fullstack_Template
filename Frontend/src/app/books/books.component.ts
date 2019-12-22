@@ -8,7 +8,7 @@ import { RestclientService } from '../restclient.service';
 })
 export class BooksComponent implements OnInit {
   readonly selectorString = 'books';
-  books;
+  books: any;
 
   constructor(private restClientService: RestclientService) { }
 
