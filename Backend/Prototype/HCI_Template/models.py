@@ -12,3 +12,5 @@ class Book(models.Model):
         book = cls(title=title)
         return book
 
+    def __str__(self):
+        return self.title
