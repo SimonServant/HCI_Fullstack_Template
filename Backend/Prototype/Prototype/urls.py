@@ -16,9 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include, url
+from rest_framework import routers
+from HCI_Template.views import BookViewSet, UserViewSet
 
+router = routers.DefaultRouter()
+router.register(r'book', BookViewSet)
+router.register(r'users', UserViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url('index/', include('HCI_Template.urls'))
+    url('index/', include('HCI_Template.urls')),
+    url(r'^', include(router.urls)),
 ]
