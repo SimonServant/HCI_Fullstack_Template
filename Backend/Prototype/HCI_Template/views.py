@@ -3,25 +3,31 @@ from django.shortcuts import render
 # Create your views here.
 
 from django.http import HttpResponse
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
 from HCI_Template.models import Book
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets, status
-from HCI_Template.serializers import BookSerializer, UserSerializer
-
+from HCI_Template.serializers import BookSerializer, UserSerializer, GroupSerializer
+import jwt,json
 
 def index(request):
-    obj = Book.create("Buch 1")
-    Book.save(obj)
+    """
+    The home page. This renders the container for the single-page app.
+    """
+    #obj = Book.create("Buch 1")
+    #Book.save(obj)
     return HttpResponse("Hello, world. You're at the HCI-prototype index.")
 
 
 class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
-    serializer_class = UserSerializer
+    serializer_class = GroupSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
+    queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
 
 
