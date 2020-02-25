@@ -27,7 +27,7 @@ export class UserService {
   // Uses http.post() to get an auth token from djangorestframework-jwt endpoint
   public login(user) {
     this.http
-      .post("/api-token-auth/", JSON.stringify(user), this.httpOptions)
+      .post("http://127.0.0.1:8000/api-token-auth/", JSON.stringify(user), this.httpOptions)
       .subscribe(
         data => {
           this.updateData(data["token"]);
@@ -42,7 +42,7 @@ export class UserService {
   public refreshToken() {
     this.http
       .post(
-        "/api-token-refresh/",
+        "http://127.0.0.1:8000/api-token-refresh/",
         JSON.stringify({ token: this.token }),
         this.httpOptions
       )
