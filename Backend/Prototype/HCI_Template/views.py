@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from HCI_Template.models import Book
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets, status
-from HCI_Template.serializers import BookSerializer, UserSerializer
+from HCI_Template.serializers import BookSerializer, UserSerializer, GroupSerializer
 
 
 def index(request):
@@ -17,11 +17,11 @@ def index(request):
 
 class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
-    serializer_class = UserSerializer
+    serializer_class = GroupSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
+    queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
 
 
