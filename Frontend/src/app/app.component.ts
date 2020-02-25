@@ -13,13 +13,29 @@ export class AppComponent implements OnInit {
    */
   public user: any;
 
+  public register_user: any;
+
   constructor(private _userService: UserService) {}
 
   ngOnInit() {
+    this.register_user = {
+      username: "",
+      password: "",
+      email: ""
+    };
+
     this.user = {
       username: "",
       password: ""
     };
+  }
+
+  register() {
+    this._userService.register({
+      username: this.register_user.username,
+      password: this.register_user.password,
+      email: this.register_user.email
+    });
   }
 
   login() {

@@ -24,10 +24,33 @@ export class UserService {
     };
   }
 
+  public register(user) {
+    this.http
+      .post(
+        "http://127.0.0.1:8000/users/",
+        JSON.stringify(user),
+        this.httpOptions
+      )
+      .subscribe(
+        data => {
+          this.updateData(data["token"]);
+          alert(data);
+        },
+        err => {
+          this.errors = err["error"];
+          alert(err["error"]);
+        }
+      );
+  }
+
   // Uses http.post() to get an auth token from djangorestframework-jwt endpoint
   public login(user) {
     this.http
-      .post("http://127.0.0.1:8000/api-token-auth/", JSON.stringify(user), this.httpOptions)
+      .post(
+        "http://127.0.0.1:8000/api-token-auth/",
+        JSON.stringify(user),
+        this.httpOptions
+      )
       .subscribe(
         data => {
           this.updateData(data["token"]);

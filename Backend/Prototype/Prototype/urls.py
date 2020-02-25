@@ -35,4 +35,12 @@ urlpatterns = [
     path(r'api-token-auth/', obtain_jwt_token),
     path(r'api-token-refresh/', refresh_jwt_token),
     path(r'api-token-verify/', verify_jwt_token),
+
+
+    # path to djoser end points
+    path(r'auth/', include('djoser.urls')),
+    path(r'auth/', include('djoser.urls.jwt')),
+
+    # path to our account's app endpoints
+    path(r"api/accounts/", include("accounts.urls"))
 ]

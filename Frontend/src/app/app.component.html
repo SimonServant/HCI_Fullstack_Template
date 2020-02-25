@@ -1,5 +1,13 @@
 <app-header></app-header>
 <router-outlet></router-outlet>
+<input [(ngModel)]="register_user.username" placeholder="Username" /><br />
+<input
+  [(ngModel)]="register_user.password"
+  type="password"
+  placeholder="Password"
+/><br />
+<input [(ngModel)]="register_user.email" placeholder="Email" /><br />
+<button (click)="register()">Register User</button>
 <h2>Log In</h2>
 <div class="row" *ngIf="!_userService.token">
   <div class="col-sm-4">
