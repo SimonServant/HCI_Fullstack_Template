@@ -18,6 +18,7 @@ from django.urls import path
 from django.conf.urls import include, url
 from rest_framework import routers
 from HCI_Template.views import BookViewSet, UserViewSet, GroupViewSet
+from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token, verify_jwt_token
 
 router = routers.DefaultRouter()
 router.register(r'book', BookViewSet)
@@ -28,4 +29,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url('index/', include('HCI_Template.urls')),
     url(r'^', include(router.urls)),
+
+    path(r'api-auth/', include("rest_framework.urls")),
+
+    path(r'api-token-auth/', obtain_jwt_token),
+    path(r'api-token-refresh/', refresh_jwt_token),
+    path(r'api-token-verify/', verify_jwt_token),
 ]
