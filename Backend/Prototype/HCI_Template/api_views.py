@@ -47,10 +47,10 @@ class QuestionViewSet(viewsets.ModelViewSet):
         query = self.request.GET.get("q")
         if query:
             queryset_list = queryset_list.filter(
-                Q(question=query),
+                # Q(question=query),
                 # Q(up_votes=query),
                 # Q(down_votes=query),
-                # Q(user_id=query),
+                Q(user_id=query),
             ).distinct()
         return queryset_list
 
@@ -64,9 +64,9 @@ class AnswerViewSet(viewsets.ModelViewSet):
         query = self.request.GET.get("q")
         if query:
             queryset_list = queryset_list.filter(
-                Q(answer=query),
+                Q(id=query),
                 # Q(up_votes=query),
-                # Q(down_votes=query),
+                # Q(down_votes=query),s
                 # Q(user_id=query),
                 # Q(question_id=query),
             ).distinct()
