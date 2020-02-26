@@ -8,6 +8,7 @@
 /><br />
 <input [(ngModel)]="register_user.email" placeholder="Email" /><br />
 <button (click)="register()">Register User</button>
+<button (click)="login()">Login User</button>
 <h2>Log In</h2>
 <div class="row" *ngIf="!_userService.token">
   <div class="col-sm-4">

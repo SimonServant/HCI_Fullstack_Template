@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+import {Observable} from "rxjs";
 
 @Injectable()
 export class UserService {
@@ -22,6 +23,10 @@ export class UserService {
     this.httpOptions = {
       headers: new HttpHeaders({ "Content-Type": "application/json" })
     };
+  }
+
+  loginUser(user): Observable<any>{
+    return this.http.post('http://127.0.0.1:8000/api-token-auth/', user)
   }
 
   public register(user) {

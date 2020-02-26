@@ -39,7 +39,7 @@ export class AppComponent implements OnInit {
   }
 
   login() {
-    this._userService.login({
+    this._userService.loginUser({
       username: this.user.username,
       password: this.user.password
     });

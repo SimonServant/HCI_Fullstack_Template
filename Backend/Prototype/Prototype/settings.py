@@ -42,8 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'HCI_Template.apps.HciTemplateConfig',
     'rest_framework',
+    'rest_framework.authtoken',
     'corsheaders',
 ]
+
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -89,10 +91,6 @@ REST_FRAMEWORK = {
     ),
 }
 
-JWT_AUTH = {
-    'JWT_ALLOW_REFRESH': True,
-    'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=3600),
-}
 
 CORS_ALLOW_METHODS = [
     'DELETE',

@@ -7,3 +7,4 @@ PyJWT==1.7.1
 pytz==2019.3
 reverse==0.1.0
 sqlparse==0.3.0
+django-rest-registration

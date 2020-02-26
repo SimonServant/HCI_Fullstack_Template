@@ -16,14 +16,38 @@ class Book(models.Model):
         return self.title
 
 
-class userProfile(models.Model):
-    user = models.OneToOneField(
-        User, on_delete=models.CASCADE, related_name="profile")
-    description = models.TextField(blank=True, null=True)
-    location = models.CharField(max_length=30, blank=True)
-    date_joined = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now=True)
-    is_organizer = models.BooleanField(default=False)
+class Question(models.Model):
+    question = models.CharField(max_length=256)
+    up_votes = models.IntegerField(default=0)
+    down_votes = models.IntegerField(default=0)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name_plural = "Question"
+
+    @classmethod
+    def create(cls, question):
+        question = cls(title=question)
+        return question
 
     def __str__(self):
-        return self.user.username
+        return self.question
+
+
+class Answer(models.Model):
+    answer = models.CharField(max_length=256)
+    up_votes = models.IntegerField(default=0)
+    down_votes = models.IntegerField(default=0)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name_plural = "Answer"
+
+    @classmethod
+    def create(cls, answer):
+        answer = cls(title=answer)
+        return answer
+
+    def __str__(self):
+        return self.answer
