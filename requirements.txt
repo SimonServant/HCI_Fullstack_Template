@@ -1,10 +1,12 @@
 asgiref==3.2.3
 Django==3.0.1
 django-cors-headers==3.2.0
+django-rest-registration==0.5.4
 djangorestframework==3.11.0
 djangorestframework-jwt==1.11.0
+permission==0.4.1
 PyJWT==1.7.1
 pytz==2019.3
 reverse==0.1.0
 sqlparse==0.3.0
-django-rest-registration
+typing==3.7.4.1
