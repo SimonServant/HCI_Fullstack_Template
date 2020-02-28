@@ -1,4 +1,11 @@
-.nav-item{
-  padding:2px;
+.nav-item {
+  padding: 2px;
   margin-left: 7px;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.navbar-brand img {
+  max-height: 20%;
+  max-width: 20%;
 }

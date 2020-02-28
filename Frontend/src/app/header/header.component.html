@@ -1,29 +1,79 @@
-<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
-  <a class="navbar-brand" href="#">Stackoverflow</a>
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarCollapse"
-    aria-controls="navbarCollapse"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarCollapse">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/home">Home</a>
+<nav
+  class="navbar navbar-expand-md bg-light navbar-light navbar-fixed-top main-nav"
+>
+  <div class="navbar-collapse collapse wmx12 mx-auto grid ai-center h100">
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Search Job</a>
+          <a class="dropdown-item" href="#">Search User</a>
+          <a class="dropdown-item" href="#">Search Tag</a>
+        </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/contact-list">Contacts</a>
+        <a class="nav-link" id="stackoverflow" routerLink="/home"
+          ><img src="assets\images\stackoverflowLogo.png" alt="" width="150" />
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Products
+        </a>
+        <div
+          class="dropdown-menu  p-4 text-muted"
+          style="max-width: 200px;"
+          aria-labelledby="navbarDropdown"
+        >
+          <a class="dropdown-item" href="#">Stack Overflow</a>
+          <p>
+            Some example text that's free-flowing within the dropdown menu.
+          </p>
+          <a class="dropdown-item" href="#">Teams</a>
+          <p>
+            Some example text that's free-flowing within the dropdown menu.
+          </p>
+          <a class="dropdown-item" href="#">Enterprise</a>
+          <p>
+            Some example text that's free-flowing within the dropdown menu.
+          </p>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Talent</a>
+          <p>
+            Some example text that's free-flowing within the dropdown menu.
+          </p>
+          <a class="dropdown-item" href="#">Advertising</a>
+          <p>
+            Some example text that's free-flowing within the dropdown menu.
+          </p>
+        </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/contact-create">Create</a>
+        <a class="nav-link" routerLink="/login">About us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/books">Books</a>
+        <a class="nav-link" routerLink="/login">Login</a>
+      </li>
+      <li class="nav-item text-center">
+        <a class="nav-link" routerLink="/signup">Signup</a>
       </li>
     </ul>
   </div>
