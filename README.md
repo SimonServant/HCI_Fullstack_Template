@@ -56,7 +56,7 @@ cd HCI_Fullstack_Template
 
 cd Frontend
 
-ng serve
+npm start
 ```
 
 ## Authors
