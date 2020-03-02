@@ -1,27 +1,66 @@
-# HCI_Fullstack_Template
-A dockerisable enviornment containing a django pyhton backend, angular frontend and mongodb database.
+# HCI Stackoverflow Template
 
-# Zum erstellen eines Admins
-python manage.py createsuperuser
 
-# lokale Änderungen festellen
-python manage.py makemigrations
+## Getting Started
 
-# lokale Änderungen in die Datenbank laden
-python manage.py migrate
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-# lokale virutelle Umgebung erzeugen und aktivieren
-python -m env venv
-myvenv\Scripts\activate
+### Prerequisites
 
-# Windows erlaubt teilweise die Verwendung unsignierter Python Files nicht, daher:
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+What things you need to install the software and how to install them
 
-# aktualisieren des Python Package Managers
-python -m pip install --upgrade pip
+```
+Technologies
+Bootstrap 3 or 4
+AngularJS 1.6 / Angular 6
+Python 3.8
+```
 
-# installation der Requirements
-pip install -r requirements.txt
+### Installing
 
-# Starte den Server
+A step by step series of examples that tell you how to get a development env running
+
+Clone or download Project
+
+```
+git clone https://github.com/SimonServant/HCI_Fullstack_Template.git
+```
+
+Change directory to project
+
+```
+cd HCI_Fullstack_Template
+```
+
+Before we do anything else we'll create a new virtual environment, using venv. This will make sure our package configuration is kept nicely isolated from any other projects we're working on.
+
+```
+python3 -m venv env
+venv\Scripts\activate.bat
+```
+install project requirements in our virtual env
+
+```
+pip install -r requirements.txt 
+```
+### Run Project
+
+```
+cd Backend\Prototype\
+
 python manage.py runserver 8000
+
+cd HCI_Fullstack_Template
+
+cd Frontend
+
+ng serve
+```
+
+## Authors
+
+* **Simon Diener** - *Initial work* - [SimonServant](https://github.com/SimonServant)
+* **Yousof Shehada** - *Initial work* - [ShehadaY](https://github.com/ShehadaY)
+
+See also the list of [contributors](https://github.com//SimonServant/HCI_Fullstack_Template/contributors) who participated in this project.
+
