@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
+import { Router } from "@angular/router";
 
 @Injectable()
 export class UserService {
@@ -21,7 +22,7 @@ export class UserService {
   // error messages received from the login attempt
   public errors: any = [];
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     this.httpOptions = {
       headers: new HttpHeaders({ "Content-Type": "application/json" })
       // 'Authorization': 'JWT ' + this._userService.token
@@ -46,8 +47,8 @@ export class UserService {
       )
       .subscribe(
         data => {
-          this.updateData(data["token"]);
-          alert(data);
+          //this.updateData(data["token"]);
+          this.router.navigate(["/login"]);
           console.log(data["token"]);
         },
         err => {

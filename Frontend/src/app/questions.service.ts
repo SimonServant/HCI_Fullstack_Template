@@ -15,6 +15,7 @@ export class QuestionsService {
 
   // send a POST request to the API to create a new data object
   create(question) {
+    console.log("Token" + this._userService.token);
     var httpOptions = {
       headers: new HttpHeaders({
         "Content-Type": "application/json",

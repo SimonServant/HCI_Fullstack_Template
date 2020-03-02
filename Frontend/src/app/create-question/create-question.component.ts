@@ -24,13 +24,15 @@ export class CreateQuestionComponent implements OnInit {
       title: "",
       tags: null,
       up_votes: 0,
+      down_votes: 0,
       user: null
     };
   }
 
   createPost() {
-    console.log(this.new_question);
+    this.new_question.tags = this.new_question.tags.toString();
     this.new_question.user = this._userService.user_id;
+    console.log(this.new_question);
     //this.new_question.user = this._userService.;
     this._questionsService.create(this.new_question).subscribe(
       data => {

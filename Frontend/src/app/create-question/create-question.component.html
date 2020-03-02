@@ -42,17 +42,16 @@
               name="tags"
               id="exampleFormControlSelect2"
             >
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
+              <option>Python</option>
+              <option>Machine Learning</option>
+              <option>Artificial Intelligence</option>
+              <option>Java</option>
             </select>
           </div>
           <div *ngIf="_userService.isLoggedIn(); else elseBlock">
             <button
               type="button"
-              click()="createPost()"
+              (click)="createPost()"
               class="btn btn-outline-primary"
             >
               Post
