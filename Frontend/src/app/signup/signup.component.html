@@ -11,7 +11,7 @@
           <div class="form-group">
             <label for="exampleInputEmail1">Username</label>
             <input
-              [(ngModel)]="register_user.name"
+              [(ngModel)]="register_user.username"
               type="text"
               name="username"
               class="form-control"
@@ -52,6 +52,7 @@
           <div class="col-md-12 text-center mb-3">
             <button
               type="submit"
+              (click)="register()"
               class=" btn btn-block mybtn btn-primary tx-tfm"
             >
               Get Started For Free

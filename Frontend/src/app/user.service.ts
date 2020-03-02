@@ -37,20 +37,22 @@ export class UserService {
   }
 
   public register(user) {
+    console.log(user);
     this.http
       .post(
         "http://127.0.0.1:8000/api/users/",
         JSON.stringify(user),
-
         this.httpOptions
       )
       .subscribe(
         data => {
           this.updateData(data["token"]);
           alert(data);
+          console.log(data["token"]);
         },
         err => {
           this.errors = err["error"];
+          console.log(this.errors);
           alert(err["error"]);
         }
       );
