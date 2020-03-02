@@ -10,8 +10,8 @@ import { throwError } from "rxjs";
 })
 export class QuestionsComponent implements OnInit {
   constructor(
-    private _questionsService: QuestionsService,
-    private _userService: UserService
+    public _questionsService: QuestionsService,
+    public _userService: UserService
   ) {}
 
   /**

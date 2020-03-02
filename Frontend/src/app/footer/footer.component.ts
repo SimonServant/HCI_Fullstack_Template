@@ -10,7 +10,7 @@ export class FooterComponent implements OnInit {
   text: string = "Hallo";
 
   show: boolean = true;
-  constructor(private _userService: UserService) {
+  constructor(public _userService: UserService) {
     this.show = _userService.username != null;
     this.text = _userService.username;
   }

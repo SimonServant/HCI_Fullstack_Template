@@ -11,9 +11,9 @@ import { throwError } from "rxjs";
 })
 export class CreateQuestionComponent implements OnInit {
   constructor(
-    private _questionsService: QuestionsService,
-    private _userService: UserService,
-    private router: Router
+    public _questionsService: QuestionsService,
+    public _userService: UserService,
+    public router: Router
   ) {}
 
   public new_question: any;
