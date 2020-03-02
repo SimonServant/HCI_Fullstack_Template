@@ -49,7 +49,10 @@ class QuestionSerializer(serializers.HyperlinkedModelSerializer):
             'up_votes',
             'down_votes',
             'user',
+            'date',
         ]
+        read_only_fields = ['date']
+
 
     def create(self, validated_data):
         """
@@ -82,7 +85,9 @@ class AnswerSerializer(serializers.HyperlinkedModelSerializer):
             'down_votes',
             'question',
             'user',
+            'date',
         ]
+        read_only_fields = ['date']
 
     def create(self, validated_data):
         validated_data = validated_data

@@ -1,3 +1,4 @@
+from django.utils import timezone
 from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
@@ -21,6 +22,7 @@ class Question(models.Model):
     up_votes = models.IntegerField(default=0)
     down_votes = models.IntegerField(default=0)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    date = models.DateTimeField(default=timezone.now)
 
     class Meta:
         verbose_name_plural = "Question"
@@ -40,6 +42,7 @@ class Answer(models.Model):
     down_votes = models.IntegerField(default=0)
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    date = models.DateTimeField(default=timezone.now)
 
     class Meta:
         verbose_name_plural = "Answer"
