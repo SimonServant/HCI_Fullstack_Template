@@ -24,6 +24,8 @@ export class QuestionsComponent implements OnInit {
    */
   public new_question: any;
 
+  public test;
+
   ngOnInit() {
     this.getPosts();
     /**
@@ -35,6 +37,8 @@ export class QuestionsComponent implements OnInit {
       up_votes: 0,
       user: null
     };
+
+    this.test = [1, 2, 3, 4];
   }
 
   getPosts() {

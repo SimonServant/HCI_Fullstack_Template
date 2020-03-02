@@ -10,7 +10,7 @@ export class QuestionsService {
 
   // Uses http.get() to load data from a single API endpoint
   list() {
-    return this.http.get("http://127.0.0.1:8000/questions/");
+    return this.http.get("http://127.0.0.1:8000/api/questions/");
   }
 
   // send a POST request to the API to create a new data object
@@ -22,7 +22,7 @@ export class QuestionsService {
       })
     };
     return this.http.post(
-      "http://127.0.0.1:8000/questions/",
+      "http://127.0.0.1:8000/api/questions/",
       JSON.stringify(question),
       httpOptions
     );

@@ -39,7 +39,7 @@ export class UserService {
   public register(user) {
     this.http
       .post(
-        "http://127.0.0.1:8000/users/",
+        "http://127.0.0.1:8000/api/users/",
         JSON.stringify(user),
 
         this.httpOptions
@@ -61,7 +61,7 @@ export class UserService {
     console.log("starting");
     this.http
       .post(
-        "http://127.0.0.1:8000/api-token-auth/",
+        "http://127.0.0.1:8000/api/api-token-auth/",
         JSON.stringify(user),
         this.httpOptions
       )
@@ -81,7 +81,7 @@ export class UserService {
   public refreshToken() {
     this.http
       .post(
-        "http://127.0.0.1:8000/api-token-refresh/",
+        "http://127.0.0.1:8000/api/api-token-refresh/",
         JSON.stringify({ token: this.token }),
         this.httpOptions
       )

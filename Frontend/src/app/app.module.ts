@@ -16,6 +16,7 @@ import { SignupComponent } from "./signup/signup.component";
 import { QuestionsComponent } from "./questions/questions.component";
 import { QuestionsService } from "./questions.service";
 import { AnswersService } from "./answers.service";
+import { CreateQuestionComponent } from './create-question/create-question.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AnswersService } from "./answers.service";
     BooksComponent,
     LoginComponent,
     SignupComponent,
-    QuestionsComponent
+    QuestionsComponent,
+    CreateQuestionComponent
   ],
   imports: [HttpClientModule, BrowserModule, AppRoutingModule, FormsModule],
   providers: [UserService, QuestionsService, , AnswersService],

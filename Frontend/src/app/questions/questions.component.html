@@ -11,27 +11,29 @@
     />
     <button class="btn btn-outline-primary">Search</button>
   </div>
-</div>
-<div class="col-lg-1 col-centered">
-  <div *ngFor="let question of questions">
-    <button
-      class="btn btn-outline-secondary"
-      data-toggle="tooltip"
-      title="Press to see answers"
-    >
-      <div class="row">
-        <div class="col col-lg-2">
-          <p>Upvotes: {{ question.up_votes }}</p>
-        </div>
-        <div class="col-md-auto">
-          <h4 class="panel-title">Titel</h4>
-          <p>{{ question.question }}</p>
-        </div>
-      </div>
-    </button>
+  <div class="d-flex justify-content-center h-100">
+    <button type="button" class="btn btn-outline-primary">Ask Question</button>
   </div>
+  <ng-container *ngFor="let question of questions">
+    <div class="d-flex  justify-content-center">
+      <button
+        class="btn btn-outline-secondary"
+        data-toggle="tooltip"
+        title="Press to see answers"
+      >
+        <div class="row">
+          <div class="col col-lg-2">
+            <p>Upvotes: {{ question.up_votes }}</p>
+          </div>
+          <div class="col-md-auto">
+            <h4 class="panel-title">Titel</h4>
+            <p>{{ question.question }}</p>
+          </div>
+        </div>
+      </button>
+    </div>
+  </ng-container>
 </div>
-<h3>Create a new post:</h3>
 
 <!-- <div class="row mb-1">
   <label class="col-md-3">Enter your post:</label>
