@@ -8,6 +8,8 @@ export class QuestionsService {
 
   ngOnInit() {}
 
+  public search: string = "";
+
   // Uses http.get() to load data from a single API endpoint
   list() {
     return this.http.get("http://127.0.0.1:8000/api/questions/");
@@ -18,8 +20,8 @@ export class QuestionsService {
     console.log("Token" + this._userService.token);
     var httpOptions = {
       headers: new HttpHeaders({
-        "Content-Type": "application/json",
-        Authorization: "Token " + this._userService.token // this is our token from the UserService (see Part 1)
+        "Content-Type": "application/json"
+        //Authorization: "Token " + this._userService.token // this is our token from the UserService (see Part 1)
       })
     };
     return this.http.post(

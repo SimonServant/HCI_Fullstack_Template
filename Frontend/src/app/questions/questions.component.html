@@ -2,6 +2,7 @@
   <div class="d-flex justify-content-center h-100">
     <!-- Search form -->
     <input
+      [(ngModel)]="_questionsService.search"
       style="width: 30em;
       margin-right: 1em;"
       class="form-control"
@@ -9,7 +10,9 @@
       placeholder="Search"
       aria-label="Search"
     />
-    <button class="btn btn-outline-primary">Search</button>
+    <button (click)="searchQuestion()" class="btn btn-outline-primary">
+      Search
+    </button>
   </div>
   <div class="d-flex justify-content-center h-100">
     <button

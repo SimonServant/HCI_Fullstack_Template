@@ -30,7 +30,7 @@ export class CreateQuestionComponent implements OnInit {
   }
 
   createPost() {
-    this.new_question.tags = this.new_question.tags.toString();
+    this.new_question.tags = this.new_question.tags[0];
     this.new_question.user = this._userService.user_id;
     console.log(this.new_question);
     //this.new_question.user = this._userService.;
