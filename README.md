@@ -91,5 +91,5 @@ ng serve
 * **Simon Diener** - *Initial work* - [SimonServant](https://github.com/SimonServant)
 * **Yousof Shehada** - *Initial work* - [ShehadaY](https://github.com/ShehadaY)
 
-See also the list of [contributors](https://github.com/HCI_Fullstack_Template/contributors) who participated in this project.
+See also the list of [contributors](https://github.com//SimonServant/HCI_Fullstack_Template/contributors) who participated in this project.
 
