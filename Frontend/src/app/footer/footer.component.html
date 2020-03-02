@@ -1,3 +1,6 @@
 <footer>
-  <p  class="text-xs-center">© Copyright 2019. All rights reserved.</p>
+  <p *ngIf="_userService.isLoggedIn()" class="text-xs-center">
+    Logged in as {{ _userService.username }}
+  </p>
+  <p class="text-xs-center">© Copyright 2019. All rights reserved.</p>
 </footer>

@@ -13,6 +13,7 @@ import { BooksComponent } from "./books/books.component";
 import { UserService } from "./user.service";
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { QuestionsComponent } from './questions/questions.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SignupComponent } from './signup/signup.component';
     FooterComponent,
     BooksComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    QuestionsComponent
   ],
   imports: [HttpClientModule, BrowserModule, AppRoutingModule, FormsModule],
   providers: [UserService],

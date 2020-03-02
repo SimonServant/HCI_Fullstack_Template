@@ -17,33 +17,7 @@ export class AppComponent implements OnInit {
 
   constructor(private _userService: UserService) {}
 
-  ngOnInit() {
-    this.register_user = {
-      username: "",
-      password: "",
-      email: ""
-    };
-
-    this.user = {
-      username: "",
-      password: ""
-    };
-  }
-
-  register() {
-    this._userService.register({
-      username: this.register_user.username,
-      password: this.register_user.password,
-      email: this.register_user.email
-    });
-  }
-
-  login() {
-    this._userService.loginUser({
-      username: this.user.username,
-      password: this.user.password
-    });
-  }
+  ngOnInit() {}
 
   refreshToken() {
     this._userService.refreshToken();
@@ -53,5 +27,5 @@ export class AppComponent implements OnInit {
     this._userService.logout();
   }
 
-  title = "angular-bootstrap-demo";
+  title = "Stackoverflow cognitive walkthrough";
 }

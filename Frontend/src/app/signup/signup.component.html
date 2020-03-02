@@ -9,30 +9,21 @@
         </div>
         <form action="#" name="registration">
           <div class="form-group">
-            <label for="exampleInputEmail1">First Name</label>
+            <label for="exampleInputEmail1">Username</label>
             <input
+              [(ngModel)]="register_user.name"
               type="text"
-              name="firstname"
+              name="username"
               class="form-control"
-              id="firstname"
-              aria-describedby="emailHelp"
-              placeholder="Enter Firstname"
-            />
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Last Name</label>
-            <input
-              type="text"
-              name="lastname"
-              class="form-control"
-              id="lastname"
-              aria-describedby="emailHelp"
-              placeholder="Enter Lastname"
+              id="username"
+              aria-describedby="userName"
+              placeholder="Enter Username"
             />
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <input
+              [(ngModel)]="register_user.email"
               type="email"
               name="email"
               class="form-control"
@@ -44,6 +35,7 @@
           <div class="form-group">
             <label for="exampleInputEmail1">Password</label>
             <input
+              [(ngModel)]="register_user.password"
               type="password"
               name="password"
               id="password"
@@ -51,6 +43,11 @@
               aria-describedby="emailHelp"
               placeholder="Enter Password"
             />
+          </div>
+          <div class="form-group">
+            <p class="text-center">
+              By signing up you accept our <a href="#">Terms Of Use</a>
+            </p>
           </div>
           <div class="col-md-12 text-center mb-3">
             <button
@@ -63,7 +60,10 @@
           <div class="col-md-12 ">
             <div class="form-group">
               <p class="text-center">
-                <a href="#" id="signin">Already have an account?</a>
+                Already have an account?
+                <a class="nav-link" routerLink="/login" id="login"
+                  >Login here</a
+                >
               </p>
             </div>
           </div>
