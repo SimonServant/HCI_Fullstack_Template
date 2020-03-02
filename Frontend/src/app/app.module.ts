@@ -16,6 +16,7 @@ import { SignupComponent } from "./signup/signup.component";
 import { QuestionsComponent } from "./questions/questions.component";
 import { QuestionsService } from "./questions.service";
 import { AnswersService } from "./answers.service";
+import { AnswersComponent } from './answers/answers.component';
 
 @NgModule({
   declarations: [
@@ -28,10 +29,11 @@ import { AnswersService } from "./answers.service";
     BooksComponent,
     LoginComponent,
     SignupComponent,
-    QuestionsComponent
+    QuestionsComponent,
+    AnswersComponent
   ],
   imports: [HttpClientModule, BrowserModule, AppRoutingModule, FormsModule],
-  providers: [UserService, QuestionsService, , AnswersService],
+  providers: [UserService, QuestionsService, AnswersService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
