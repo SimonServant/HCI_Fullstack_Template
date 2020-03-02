@@ -23,6 +23,13 @@ class Question(models.Model):
     down_votes = models.IntegerField(default=0)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateTimeField(default=timezone.now)
+    title = models.CharField(max_length=64, default="")
+    TAGS = (
+                ('Python', 'Python'),
+                ('ML', 'Machine Learning'),
+                ('AI', 'Artificial Intelligence'),
+                ('Java', 'Java'))
+    tags = models.CharField(max_length=32, choices=TAGS, default='')
 
     class Meta:
         verbose_name_plural = "Question"

@@ -50,9 +50,10 @@ class QuestionSerializer(serializers.HyperlinkedModelSerializer):
             'down_votes',
             'user',
             'date',
+            'title',
+            'tags',
         ]
         read_only_fields = ['date']
-
 
     def create(self, validated_data):
         """
@@ -64,9 +65,11 @@ class QuestionSerializer(serializers.HyperlinkedModelSerializer):
         up_votes = validated_data.pop('up_votes')
         down_votes = validated_data.pop('down_votes')
         user = validated_data.pop('user')
+        title = validated_data.pop('title')
+        tags = validated_data.pop('tags')
 
         question_obj = Question.objects.create(question=question, up_votes=up_votes, down_votes=down_votes,
-                                               user=user)
+                                               user=user, title=title, tags=tags)
         question_obj.save()
         return question_obj
 
