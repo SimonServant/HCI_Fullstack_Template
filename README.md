@@ -11,9 +11,11 @@ What things you need to install the software and how to install them
 
 ```
 Technologies
-Bootstrap 3 or 4
 AngularJS 1.6 / Angular 6
+Angular CLI 9.0.4
 Python 3.8
+node 12.14.0 https://nodejs.org/en/download/ -> Download latest version
+npm 6.13.4
 ```
 
 ### Installing
