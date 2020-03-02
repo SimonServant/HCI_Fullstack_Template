@@ -1,1 +1,85 @@
-<p>create-question works!</p>
+<div class="container">
+  <div class="col-md-5 mx-auto">
+    <div id="first">
+      <div class="myform form ">
+        <div class="logo mb-3">
+          <div class="col-md-12 text-center">
+            <h1>Ask a public question</h1>
+          </div>
+        </div>
+        <form name="createQuestion">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Title</label>
+            <input
+              [(ngModel)]="new_question.title"
+              type="text"
+              name="title"
+              class="form-control"
+              id="title"
+              aria-describedby="title"
+              placeholder="Enter title"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Body</label>
+            <textarea
+              [(ngModel)]="new_question.question"
+              class="form-control"
+              id="question"
+              name="question"
+              aria-describedby="question"
+              rows="5"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect2"
+              >Select one or more tags</label
+            >
+            <select
+              multiple
+              [(ngModel)]="new_question.tags"
+              class="form-control"
+              name="tags"
+              id="exampleFormControlSelect2"
+            >
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <div *ngIf="_userService.isLoggedIn(); else elseBlock">
+            <button
+              type="button"
+              click()="createPost()"
+              class="btn btn-outline-primary"
+            >
+              Post
+            </button>
+          </div>
+          <ng-template #elseBlock>
+            <div>To post you have to log in</div>
+            <div style="margin-top: 1em;">
+              <button
+                style="margin-right: 1em;"
+                type="button"
+                routerLink="/login"
+                class="btn btn-outline-primary"
+              >
+                Login
+              </button>
+              <button
+                type="button"
+                routerLink="/signup"
+                class="btn btn-outline-primary"
+              >
+                Signup
+              </button>
+            </div>
+          </ng-template>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -12,7 +12,13 @@
     <button class="btn btn-outline-primary">Search</button>
   </div>
   <div class="d-flex justify-content-center h-100">
-    <button type="button" class="btn btn-outline-primary">Ask Question</button>
+    <button
+      type="button"
+      routerLink="/createQuestion"
+      class="btn btn-outline-primary"
+    >
+      Ask Question
+    </button>
   </div>
   <ng-container *ngFor="let question of questions">
     <div class="d-flex  justify-content-center">

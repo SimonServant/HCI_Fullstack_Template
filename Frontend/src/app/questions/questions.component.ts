@@ -19,24 +19,10 @@ export class QuestionsComponent implements OnInit {
    */
   public questions;
 
-  /**
-   * An object representing the data in the "add" form
-   */
-  public new_question: any;
-
   public test;
 
   ngOnInit() {
     this.getPosts();
-    /**
-     * New question consisting out of the id of the currently logged in User
-     * the question itself and the upvotes
-     */
-    this.new_question = {
-      question: "",
-      up_votes: 0,
-      user: null
-    };
 
     this.test = [1, 2, 3, 4];
   }
@@ -56,21 +42,6 @@ export class QuestionsComponent implements OnInit {
       err => console.error(err),
       // the third argument is a function which runs on completion
       () => console.log("done loading posts")
-    );
-  }
-
-  createPost() {
-    //this.new_question.user = this._userService.;
-    this._questionsService.create(this.new_question).subscribe(
-      data => {
-        // refresh the list
-        this.getPosts();
-        return true;
-      },
-      error => {
-        console.error("Error saving!");
-        return throwError(error);
-      }
     );
   }
 }
