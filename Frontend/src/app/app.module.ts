@@ -11,9 +11,11 @@ import { HeaderComponent } from "./header/header.component";
 import { FooterComponent } from "./footer/footer.component";
 import { BooksComponent } from "./books/books.component";
 import { UserService } from "./user.service";
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
-import { QuestionsComponent } from './questions/questions.component';
+import { LoginComponent } from "./login/login.component";
+import { SignupComponent } from "./signup/signup.component";
+import { QuestionsComponent } from "./questions/questions.component";
+import { QuestionsService } from "./questions.service";
+import { AnswersService } from "./answers.service";
 
 @NgModule({
   declarations: [
@@ -29,7 +31,7 @@ import { QuestionsComponent } from './questions/questions.component';
     QuestionsComponent
   ],
   imports: [HttpClientModule, BrowserModule, AppRoutingModule, FormsModule],
-  providers: [UserService],
+  providers: [UserService, QuestionsService, , AnswersService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

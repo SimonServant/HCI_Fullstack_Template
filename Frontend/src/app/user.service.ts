@@ -16,6 +16,8 @@ export class UserService {
   // the username of the logged in user
   public username: string;
 
+  public user_id: number;
+
   // error messages received from the login attempt
   public errors: any = [];
 
@@ -67,7 +69,6 @@ export class UserService {
         data => {
           this.updateData(data["token"]);
           console.log(data["token"]);
-          console.log(this.isLoggedIn());
         },
         err => {
           this.errors = err["error"];
@@ -110,7 +111,7 @@ export class UserService {
     console.log(token_decoded);
     this.token_expires = new Date(token_decoded.exp * 1000);
     this.username = token_decoded.username;
-    console.log(this.username);
-    console.log(this.token_expires);
+    this.user_id = token_decoded.user_id;
+    console.log(token_decoded.user_id);
   }
 }

@@ -1,1 +1,44 @@
-<p>questions works!</p>
+<div class="container h-100">
+  <div class="d-flex justify-content-center h-100">
+    <!-- Search form -->
+    <input
+      style="width: 30em;
+      margin-right: 1em;"
+      class="form-control"
+      type="text"
+      placeholder="Search"
+      aria-label="Search"
+    />
+    <button class="btn btn-outline-primary">Search</button>
+  </div>
+</div>
+<div class="col-lg-1 col-centered">
+  <div *ngFor="let question of questions">
+    <button
+      class="btn btn-outline-secondary"
+      data-toggle="tooltip"
+      title="Press to see answers"
+    >
+      <div class="row">
+        <div class="col col-lg-2">
+          <p>Upvotes: {{ question.up_votes }}</p>
+        </div>
+        <div class="col-md-auto">
+          <h4 class="panel-title">Titel</h4>
+          <p>{{ question.question }}</p>
+        </div>
+      </div>
+    </button>
+  </div>
+</div>
+<h3>Create a new post:</h3>
+
+<!-- <div class="row mb-1">
+  <label class="col-md-3">Enter your post:</label>
+  <div class="col-md-9 mb-1">
+    <input type="text" name="body" [(ngModel)]="new_post.body" />
+  </div>
+  <div class="col-md-2 offset-3">
+    <button (click)="createPost()" class="btn btn-primary">Save</button>
+  </div>
+</div> -->
