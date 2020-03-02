@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import {Observable} from "rxjs";
+import { Observable } from "rxjs";
 
 @Injectable()
 export class UserService {
@@ -22,11 +22,16 @@ export class UserService {
   constructor(private http: HttpClient) {
     this.httpOptions = {
       headers: new HttpHeaders({ "Content-Type": "application/json" })
+      // 'Authorization': 'JWT ' + this._userService.token
     };
   }
 
-  loginUser(user): Observable<any>{
-    return this.http.post('http://127.0.0.1:8000/api-token-auth/', user)
+  // loginUser(user): Observable<any> {
+  //   return this.http.post("http://127.0.0.1:8000/api-token-auth/", user);
+  // }
+
+  public isLoggedIn() {
+    return this.token != null;
   }
 
   public register(user) {
@@ -34,6 +39,7 @@ export class UserService {
       .post(
         "http://127.0.0.1:8000/users/",
         JSON.stringify(user),
+
         this.httpOptions
       )
       .subscribe(
@@ -50,6 +56,7 @@ export class UserService {
 
   // Uses http.post() to get an auth token from djangorestframework-jwt endpoint
   public login(user) {
+    console.log("starting");
     this.http
       .post(
         "http://127.0.0.1:8000/api-token-auth/",
@@ -59,9 +66,12 @@ export class UserService {
       .subscribe(
         data => {
           this.updateData(data["token"]);
+          console.log(data["token"]);
+          console.log(this.isLoggedIn());
         },
         err => {
           this.errors = err["error"];
+          console.log(this.errors);
         }
       );
   }
@@ -100,5 +110,7 @@ export class UserService {
     console.log(token_decoded);
     this.token_expires = new Date(token_decoded.exp * 1000);
     this.username = token_decoded.username;
+    console.log(this.username);
+    console.log(this.token_expires);
   }
 }
